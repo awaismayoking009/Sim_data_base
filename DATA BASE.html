@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>𝗔𝗪𝗔𝗜𝗦 𝗠𝗔𝗬𝗢 𝗗𝗔𝗧𝗔~𝗕𝗔𝗦𝗘</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    body {
+
+      background: black;
+
+      color: #00ff6a;
+
+      font-family: 'Courier New', monospace;
+
+      overflow: hidden;
+
+    }
+
+    /* Fake terminal background */
+
+    #fakeTerminal {
+
+      position: fixed;
+
+      top: 0; left: 0;
+
+      width: 100%; height: 100%;
+
+      z-index: -1;
+
+      color: #00ff6a55;
+
+      font-size: 14px;
+
+      padding: 10px;
+
+      white-space: pre;
+
+      overflow: hidden;
+
+      line-height: 1.4;
+
+    }
+
+    .terminal-box {
+
+      background: rgba(0, 0, 0, 0.8);
+
+      border: 1px solid #00ff6a;
+
+      box-shadow: 0 0 15px #00ff6a55;
+
+    }
+
+    input, button {
+
+      background: black !important;
+
+      border: 1px solid #00ff6a !important;
+
+      color: #00ff6a !important;
+
+    }
+
+    input::placeholder {
+
+      color: #00ff6a88;
+
+    }
+
+    .whatsapp-btn {
+
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 10px 20px;
+
+      border: 1px solid #25D366;
+
+      color: #25D366;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      border-radius: 8px;
+
+      transition: background 0.3s;
+
+    }
+
+    .whatsapp-btn:hover {
+
+      background: #25D366;
+
+      color: black;
+
+    }
+
+    /* Terminal loading */
+
+    #loadingArea p {
+
+      font-family: 'Courier New', monospace;
+
+      white-space: pre;
+
+      text-align: left;
+
+    }
+
+  </style>
+
+</head>
+
+<body class="flex items-center justify-center min-h-screen p-4">
+
+  <!-- Fake Terminal Background -->
+
+  <div id="fakeTerminal"></div>
+
+  <div class="w-full max-w-3xl terminal-box rounded-2xl p-8 relative">
+
+    <h1 class="text-2xl md:text-3xl text-center font-bold mb-6">> 𝗔𝗪𝗔𝗜𝗦 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 🧠</h1>
+
+    <div class="flex gap-3 mb-4">
+
+      <input id="phoneInput" type="text" placeholder="03xxxxxxxxx"
+
+        class="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+
+      <button id="searchBtn"
+
+        class="px-5 py-3 rounded-lg hover:bg-green-600 hover:text-black transition">
+
+        🔍 SEARCH
+
+      </button>
+
+    </div>
+
+    <p id="phoneError" class="text-red-400 font-semibold mb-4 hidden text-center">⚠️ نمبر درج کریں!</p>
+
+    <!-- Terminal Style Loading -->
+
+    <div id="loadingArea" class="hidden mt-6 text-left text-green-400 text-sm">
+
+      <p id="terminalLoading"></p>
+
+    </div>
+
+    <div id="resultArea" class="space-y-4 mt-6"></div>
+
+    <!-- WhatsApp Channel Button -->
+
+    <div class="text-center mt-8">
+
+      <a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922" target="_blank" class="whatsapp-btn">
+
+        🟢 Join Our WhatsApp Channel
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // 🧠 Fake terminal background scroll
+
+    const terminalBg = document.getElementById('fakeTerminal');
+
+    const fakeCommands = [
+
+      '> Initializing network sequence...',
+
+      '> Connecting to remote server [192.168.0.1]...',
+
+      '> Connection established ✓',
+
+      '> Scanning ports...',
+
+      '> Injecting payload into database...',
+
+      '> Accessing 𝔸𝕎𝔸𝕀𝕊 ℍ𝔸ℂ𝕂𝔼ℝ 𝔻𝔸𝕋𝔸𝔹𝔸𝕊𝔼...',
+
+      '> Decrypting hashes...',
+
+      '> Bypassing firewall...',
+
+      '> Gathering SIM data...',
+
+      '> Transmitting packets █████▒▒▒▒▒▒',
+
+      '> Trace hidden node...',
+
+      '> Terminal sync complete ✓',
+
+      '> Pinging target...',
+
+      '> Root access granted √',
+
+    ];
+
+    function loopTerminalCommands() {
+
+      const cmd = fakeCommands[Math.floor(Math.random() * fakeCommands.length)];
+
+      terminalBg.innerText += cmd + '\n';
+
+      terminalBg.scrollTop = terminalBg.scrollHeight;
+
+      if (terminalBg.innerText.split('\n').length > 30) {
+
+        terminalBg.innerText = terminalBg.innerText.split('\n').slice(-30).join('\n');
+
+      }
+
+    }
+
+    setInterval(loopTerminalCommands, 300);
+
+    // ⌛ Terminal loading animation
+
+    const terminalLoading = document.getElementById('terminalLoading');
+
+    function terminalStyleLoading() {
+
+      terminalLoading.innerText = '';
+
+      let steps = [
+
+        '> ACCESSING 𝔸𝕎𝔸𝕀𝕊 ℍ𝔸ℂ𝕂𝔼ℝ DATABASE...',
+
+        '> CONNECTING █▒▒▒▒▒▒▒▒▒ 10%',
+
+        '> CONNECTING ████▒▒▒▒▒▒ 40%',
+
+        '> CONNECTING ███████▒▒▒ 70%',
+
+        '> CONNECTING ██████████ 100%',
+
+        '> DATA FETCHING... COMPLETE ✓'
+
+      ];
+
+      let i = 0;
+
+      let interval = setInterval(() => {
+
+        terminalLoading.innerText += steps[i] + '\n';
+
+        i++;
+
+        if (i === steps.length) clearInterval(interval);
+
+      }, 700);
+
+    }
+
+    // 📱 Search Logic
+
+    const searchBtn = document.getElementById("searchBtn");
+
+    const phoneInput = document.getElementById("phoneInput");
+
+    const phoneError = document.getElementById("phoneError");
+
+    const loadingArea = document.getElementById("loadingArea");
+
+    const resultArea = document.getElementById("resultArea");
+
+    searchBtn.addEventListener("click", async () => {
+
+      const phone = phoneInput.value.trim();
+
+      if (!phone) {
+
+        phoneError.classList.remove("hidden");
+
+        return;
+
+      }
+
+      phoneError.classList.add("hidden");
+
+      resultArea.innerHTML = "";
+
+      loadingArea.classList.remove("hidden");
+
+      terminalStyleLoading();
+
+      let apiURL = "";
+
+      if (phone.startsWith("03")) {
+
+        apiURL = `https://legendxdata.site/Api/simdata.php?phone=92${phone.slice(1)}`;
+
+      } else if (phone.startsWith("7") || phone.startsWith("9")) {
+
+        apiURL = `https://legendxdata.site/ind.php?number=${phone}`;
+
+      } else {
+
+        resultArea.innerHTML = `<p class="text-yellow-400 font-semibold text-center">⚠️ نمبر کا فارمیٹ درست نہیں۔</p>`;
+
+        loadingArea.classList.add("hidden");
+
+        return;
+
+      }
+
+      try {
+
+        const proxyURL = `https://api.allorigins.win/get?url=${encodeURIComponent(apiURL)}`;
+
+        const response = await fetch(proxyURL);
+
+        const proxyData = await response.json();
+
+        const data = JSON.parse(proxyData.contents);
+
+        loadingArea.classList.add("hidden");
+
+        if (data.records && data.records.length > 0) {
+
+          data.records.forEach(record => {
+
+            const card = document.createElement("div");
+
+            card.className = "p-4 border border-green-500 rounded-lg";
+
+            card.innerHTML = `
+
+              <p><strong>👤 Name:</strong> ${record.Name || "N/A"}</p>
+
+              <p><strong>📱 Mobile:</strong> ${record.Mobile || "N/A"}</p>
+
+              <p><strong>🌍 Country:</strong> ${record.Country || "N/A"}</p>
+
+              <p><strong>🆔 CNIC:</strong> ${record.CNIC || "N/A"}</p>
+
+              <p><strong>🏠 Address:</strong> ${record.Address || "N/A"}</p>
+
+              <button onclick="copyDetails(this)" class="mt-2 px-4 py-1 border border-green-500 rounded hover:bg-green-600 hover:text-black transition">📋 Copy</button>
+
+            `;
+
+            resultArea.appendChild(card);
+
+          });
+
+        } else {
+
+          resultArea.innerHTML = `<p class="text-red-400 font-semibold text-center">❌ کوئی ریکارڈ نہیں ملا۔</p>`;
+
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        loadingArea.classList.add("hidden");
+
+        resultArea.innerHTML = `<p class="text-red-400 font-semibold text-center">⚠️ ڈیٹا حاصل کرنے میں خرابی۔</p>`;
+
+      }
+
+    });
+
+    function copyDetails(btn) {
+
+      const text = btn.parentElement.innerText;
+
+      navigator.clipboard.writeText(text);
+
+      btn.innerText = "✅ Copied!";
+
+      setTimeout(() => btn.innerText = "📋 Copy", 2000);
+
+    }
+
+  </script>
+
+<script type='text/javascript' src='//pl26635370.revenuecpmgate.com/0d/d6/68/0dd66892ae1350e1c2ac63bd9e54e111.js'></script></body>
+
+</html>
